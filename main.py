@@ -109,9 +109,18 @@ def convert_to_full_url(raw_link):
     return full_url
 
 
+# Remove a file from the system.
+def remove_system_file(system_path):
+    os.remove(system_path)
+
+
 def main():
     # Read the file from the system.
     html_file_path = "buyat.ppg.com.html"
+    if check_file_exists(html_file_path):
+        # Remove a file from the system.
+        remove_system_file(html_file_path)
+
     # Check if the file exists.
     if check_file_exists(html_file_path) == False:
         # If the file does not exist, download it using Selenium.
