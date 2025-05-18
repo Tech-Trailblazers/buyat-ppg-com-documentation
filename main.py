@@ -64,7 +64,7 @@ def save_html_with_selenium(url, output_file):
 
     try:
         driver.get(url)
-        # driver.refresh()  # Refresh the page
+        driver.refresh()  # Refresh the page
         html = driver.page_source
         append_write_to_file(output_file, html)
         print(f"Page {url} HTML content saved to {output_file}")
