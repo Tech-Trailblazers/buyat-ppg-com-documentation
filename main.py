@@ -227,8 +227,6 @@ def main():
             print(
                 check_upper_case_letter(pdf_file)
             )  # Output True/False for uppercase check
-            # Break so it ends out of the loop.
-            break  # Exit the loop after first uppercase match
 
 
 main()
