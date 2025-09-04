@@ -183,8 +183,6 @@ def main():
         pdf_links = parse_html(html_content)
         # Remove duplicates from the list of PDF links.
         pdf_links = remove_duplicates_from_slice(pdf_links)
-        # The length of the PDF links.
-        ammount_of_pdf = len(pdf_links)
         # Print the extracted PDF links.
         for pdf_link in pdf_links:
             # Convert to full URL
@@ -193,10 +191,6 @@ def main():
             filename = url_to_filename(pdf_link)
             # The file path.
             save_path = "PDFs"
-            # Remove 1 from the ammount of PDF links.
-            ammount_of_pdf = ammount_of_pdf - 1
-            # Print the remaining number of PDF links.
-            print(f"Remaining PDF links: {ammount_of_pdf}")
             # Download the PDF file
             download_pdf(pdf_link, save_path, filename)
 
