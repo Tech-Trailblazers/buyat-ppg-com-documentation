@@ -8,6 +8,9 @@ on:
     branches: [ main ]         # Run on pull requests targeting the main branch
   workflow_dispatch:           # Allow manual triggering from GitHub Actions tab
 
+permissions:
+  contents: write
+
 jobs:
   run-app:
     runs-on: ubuntu-latest     # Use the latest available Ubuntu environment
@@ -16,6 +19,8 @@ jobs:
       # Checkout the repository code so the runner has access to it
       - name: Checkout code
         uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       # Set up the version of Python to use
       - name: Set up Python
